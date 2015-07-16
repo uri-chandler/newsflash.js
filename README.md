@@ -69,8 +69,7 @@ A few notes to be aware of:
 // Also, if 'bar' or 'baz' have any event handlers on their own, they will also be triggered
 emit(['bar', 'baz']);
 ```
-
-4. A multi-event is simply denoted as an array of events: `['even1', 'event2', ..., 'eventN']`
+* A multi-event is simply denoted as an array of events: `['even1', 'event2', ..., 'eventN']`
 
 
 
