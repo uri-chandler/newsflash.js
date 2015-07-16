@@ -157,3 +157,22 @@ var subscription = once(['foo', 'bar'], function(){
 ```  
 
 ---
+`emit(event, data)`
+Emits `event`, passing any received `data` to the registered handler(s).
+
+- `event`  
+As a `String`, a single event to emit.  
+As an `Array` of strings, a multi-event to emit. The order of the events in the array does not matter (it gets normalized internally).
+
+- `data` (optional)
+Any type of data that you want to pass to a registered event handler.
+
+Example (single event, no data):
+```javascript
+emit('foo');
+```  
+
+Example (multi-event, string-data):
+```javascript
+emit(['foo', 'bar'], 'newsflash is awesome!');
+```
