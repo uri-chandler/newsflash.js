@@ -22,7 +22,8 @@ It has all the standard features you'd expect to see in a pub-sub implementation
 
 #### Motivation
 Does the following scenario sound familiar:  
-You need to run function `foo()` only if  
+You need to run function `foo()` only if
+
 1. `bar` has already happened
 
 2. `baz` has already happened
@@ -57,6 +58,7 @@ emit('baz');
 It's that simple.  
 
 A few notes to be aware of:
+
 1. You can of course subscribe to 'bar' and 'baz' separtely, as each of them is stands as a single event on it's own.  
 
 2. A multi-event only gets called after a full-events-cycle is complete for it's separate events. This simply means that anytime you want to trigger the multi-event function `foo()`, you have to emit BOTH `bar` and `baz` (and all over again the next time you want to trigger `foo()`).  
