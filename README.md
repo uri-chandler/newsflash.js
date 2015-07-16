@@ -24,13 +24,14 @@ It has all the standard features you'd expect to see in a pub-sub implementation
 Does the following scenario sound familiar:  
 You need to run function `foo()` only if  
 1. `bar` has already happened
+
 2. `baz` has already happened
 
-If any of these happened without the other - don't trigger `foo()`.  
+3. If any of these happened without the other - don't trigger `foo()`.  
 
 If you've ever had to implement this, you probably ended up saving some state-data in a shared scope, or worse - using timers.  
 
-`Newsflash.js` to the rescue! No need to manage shared state-date or timers. It's as simple as registering an event handler, only for multiple events.
+`Newsflash.js` to the rescue! No need to manage shared state-date or timers. It's as simple as registering an event handler - for multiple events.
 
 ---
 
@@ -57,7 +58,9 @@ It's that simple.
 
 A few notes to be aware of:
 1. You can of course subscribe to 'bar' and 'baz' separtely, as each of them is stands as a single event on it's own.  
+
 2. A multi-event only gets called after a full-events-cycle is complete for it's separate events. This simply means that anytime you want to trigger the multi-event function `foo()`, you have to emit BOTH `bar` and `baz` (and all over again the next time you want to trigger `foo()`).  
+
 3. There's a shortcut for triggering multi-events:
 ```javascript
 // 'foo()' gets called immediately
