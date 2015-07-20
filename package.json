@@ -1,0 +1,31 @@
+{
+  "name": "Newsflash.js",
+  "description": "A Multi-Event enabled Pub-Sub module",
+  "homepage": "https://github.com/ujc/newsflash.js#readme",
+  "version": "0.1.0",
+  "license": "MIT",
+  "author": {
+    "name": "Uri Chandler",
+    "email": "uri@kungfoo.bar"
+  },
+  "main": "Newsflash.js",
+  "scripts": {
+    "test": "grunt prebuild"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ujc/newsflash.js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ujc/newsflash.js/issues"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-mocha-test": "latest",
+    "grunt-force-task": "latest",
+    "grunt": "latest",
+    "mocha": "latest",
+    "chai": "latest"
+  }
+}

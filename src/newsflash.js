@@ -153,7 +153,7 @@ function publishMulti(single, multi){
 }
 
 
-modules.exports = {
+module.exports = {
 
 	on	: function on(event, handler){
 
@@ -203,7 +203,7 @@ modules.exports = {
 	once: 	function once(event, handler){
 
 		handler.once = true;
-		return on(event, handler);
+		return this.on(event, handler);
 	},
 
 	emit: function emit(event, data){
@@ -211,6 +211,17 @@ modules.exports = {
 		// Single event
 		if (typeof event === 'string'){
 			publish(event, data);
+			return;
+		}
+
+		// Multi-Event
+		if (Array.isArray(event)){
+
+			// Publish each event separately, which in turn will call the multi-event handler
+			// once all separate event-handlers were triggered
+			event.forEach(function(e){
+				publish(e, data);
+			});
 			return;
 		}
 
