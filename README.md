@@ -132,7 +132,7 @@ off(['foo', 'bar'], '1234');
 ```  
 
 ---
-`once(event, handler)`
+`once(event, handler)`  
 Same as `on(...)` only the `handler` will only get triggered once, and will then be removed from the `event`. Any subsequent publications to `event` will NOT trigger `handler` (it has been deleted).
 
 - `event`  
@@ -157,7 +157,7 @@ var subscription = once(['foo', 'bar'], function(){
 ```  
 
 ---
-`emit(event, data)`
+`emit(event, data)`  
 Emits `event`, passing any received `data` to the registered handler(s).
 
 - `event`  
